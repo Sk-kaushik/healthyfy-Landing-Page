@@ -1,0 +1,289 @@
+$primary-color: #ffc518;
+$primary-dark: #f0ba18;
+$secondary-color: #545662;
+$secondary-dark: #3c3e47;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+a,
+li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+header {
+  background: $secondary-color;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  nav {
+    width: 20%;
+    height: 3em;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      h2 {
+        font-weight: 500;
+        font-size: 1.3em;
+        text-transform: lowercase;
+        color: #292929;
+        span {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.left {
+  width: 35%;
+  height: 100%;
+  background: $secondary-color;
+  position: relative;
+
+  .landing-heading {
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+    top: 35%;
+    left: 8em;
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 4em;
+      line-height: 1.3em;
+      font-weight: 600;
+      color: white;
+
+      span {
+        margin-left: 2em;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.recipe-box {
+  width: 80%;
+  height: 12em;
+  position: absolute;
+  background: white;
+  bottom: 5em;
+  left: 8em;
+  .btn {
+    width: 8em;
+    height: 3.5em;
+    position: absolute;
+    right: -7.5em;
+    display: flex;
+    z-index: 2;
+    .next-btn {
+      width: 50%;
+      height: 100%;
+      background: $secondary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+
+      transition: 0.4s;
+      i {
+        transition: 0.4s;
+      }
+      &:hover {
+        background: #484953;
+
+        i {
+          transform: translateX(5px);
+        }
+      }
+    }
+    .prev-btn {
+      width: 50%;
+      height: 100%;
+      background: $primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+      color: $secondary-dark;
+
+      i {
+        transition: 0.4s;
+      }
+      &:hover {
+        background: $primary-dark;
+
+        i {
+          transform: translateX(-5px);
+        }
+      }
+    }
+  }
+
+  .recipe {
+    width: 80%;
+    height: 60%;
+    position: relative;
+    margin: 1em auto;
+    display: flex;
+    overflow: hidden;
+    p {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 8em;
+      display: flex;
+      font-size: 0.8em;
+      z-index: 9999;
+    }
+  }
+  .recipe-button {
+    width: 80%;
+    height: 3em;
+    position: absolute;
+    z-index: 99;
+    left: 10%;
+    bottom: -10%;
+    background: $primary-color;
+    transition: 0.4s;
+
+    div {
+      height: 3em;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+    }
+    h2 {
+      display: block;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+    img {
+      display: block;
+      z-index: 99;
+      width: 100px;
+      height: 12px;
+      transition: 0.4s;
+    }
+    &:hover {
+      background: $primary-dark;
+      img {
+        width: 80px;
+      }
+    }
+  }
+}
+
+.right {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  .secondaryBg {
+    position: relative;
+    width: 55%;
+    height: 100%;
+    background: $secondary-dark;
+    display: flex;
+    justify-content: center;
+    .nav-links {
+      width: 70%;
+      height: 3em;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      a {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 0.8em;
+        z-index: 999;
+        &:hover {
+          color: rgb(221, 221, 221);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .yellowBg {
+    width: 45%;
+    height: 100%;
+    background: $primary-color;
+  }
+  .lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 9%;
+    right: 13%;
+    &::after {
+      content: "";
+      width: 38em;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      right: 8%;
+      background: url("../res/images/salad.png") no-repeat center;
+      background-size: contain;
+      z-index: 9;
+      transform: rotate(30deg);
+    }
+    .p1,
+    .p2,
+    .p3 {
+      stroke-dasharray: 1000;
+    }
+    .p1 {
+      animation: rotate 80s infinite linear;
+    }
+    .p2 {
+      animation: rotate 100s infinite linear alternate-reverse;
+      animation-delay: 0.5s;
+    }
+    .p3 {
+      animation: rotate 110s infinite linear;
+      animation-delay: 1s;
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    stroke-dashoffset: 10000;
+  }
+}
+
+.active {
+  color: $primary-color !important;
+}
+
+.activeRecipe {
+  display: block !important;
+}
+
+.removeRecipe {
+  display: none !important;
+}
